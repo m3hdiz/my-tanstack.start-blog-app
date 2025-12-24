@@ -45,13 +45,49 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
         <HeadContent />
       </head>
       <body>
-        <Header />
-        {children}
+        <section className='max-xl:hidden fixed left-0 w-1/3 h-full bg-background-color3 flex flex-col justify-between text-center py-5'>
+          <Header />
+          <div className='flex flex-col justify-center items-center gap-10 h-full'>
+            <h1 className='header1 text-headline-color2'>The Roam Report</h1>
+            <div className='flex flex-col justify-between items-center gap-6'>
+              <img
+                src='/Train illustration.svg'
+                alt='Train illustration'
+                className='w-30'
+              />
+              <p className='paragraph2 text-paragraph-color2'>
+                Stories and photos of long walks,
+                <br />
+                wrong turns, and everyday discoveries
+              </p>
+            </div>
+          </div>
+          <div className='flex w-full justify-around items-center text-headline-color2 header4 mask-r-from-70% mask-l-from-70%'>
+            <p>Currently in</p>
+            <div>
+              <img src='/Globe icon.svg' alt='Globe icon' />
+            </div>
+            <p>Dallol, Ethiopia</p>
+            <div>
+              <img src='/Globe icon.svg' alt='Globe icon' />
+            </div>
+            <p>14.2417° N</p>
+            <div>
+              <img src='/Globe icon.svg' alt='Globe icon' />
+            </div>
+            <p>42°F</p>
+          </div>
+        </section>
+        <section className='min-h-screen xl:w-2/3 max-xl:w-full justify-self-end'>
+          {/* Main content area */}
+          {children}
+        </section>
+
         <TanStackDevtools
           config={{
             position: 'bottom-right',

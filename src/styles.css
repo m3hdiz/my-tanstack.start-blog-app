@@ -1,15 +1,106 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import '@fontsource/gasoek-one';
+@import '@fontsource-variable/plus-jakarta-sans';
+@import '@fontsource/xanh-mono';
+
+@theme {
+  --color-divider-color1: #332115;
+  --color-divider-color2: #e9f9b2;
+  --color-headline-color1: #332115;
+  --color-headline-color2: #0053d4;
+  --color-headline-color3: #e9f9b2;
+  --color-paragraph-color1: #332115;
+  --color-paragraph-color2: #0053d4;
+  --color-paragraph-color3: #e9f9b2;
+  --color-paragraph-color4: #756f6c;
+  --color-link-color: #332115;
+  --color-background-color1: #ffffff;
+  --color-background-color2: #f9f1e2;
+  --color-background-color3: #c6dcff;
+  --color-background-color4: #5f6d3b;
+
+  --font-GasoekOne: 'Gasoek One', sans-serif;
+  --font-PlusJakartaSans: 'Plus Jakarta Sans', sans-serif;
+  --font-XanhMono: 'Xanh Mono', monospace;
+  --font-Roboto: 'Roboto', sans-serif;
+
+  /* css variables for typography: */
+  /* --text-display-font-size: 104px;
+  --text-display-line-height: 120px;
+  --text-caption-font-size: 14px;
+  --text-caption-line-height: 120px;
+  --text-navlink-font-size: 14px;
+  --text-navlink-line-height: 120px;
+  --text-textlink-font-size: 16px;
+  --text-textlink-line-height: 120px;
+  --text-header1-font-size: 80px;
+  --text-header2-font-size: 48px;
+  --text-header3-font-size: 24px;
+  --text-header4-font-size: 20px;
+  --text-paragraph1-font-size: 20px;
+  --text-paragraph2-font-size: 20px;
+  --text-paragraph3-font-size: 16px; */
+}
+
+.text-display {
+  @apply text-[104px] font-XanhMono leading-[120px] tracking-[-3%];
+}
+
+.text-caption,
+.text-navlink {
+  @apply text-[14px] font-semibold leading-[120%] tracking-[-2%];
+}
+
+.text-textlink {
+  @apply text-[16px] underline font-medium leading-[120%] tracking-[-2%];
+}
+
+.header1 {
+  @apply text-[80px] font-normal font-GasoekOne leading-[90%] tracking-[-1%];
+}
+
+.header2 {
+  @apply text-[48px] font-semibold font-PlusJakartaSans leading-[120%] tracking-[-5%];
+}
+
+.header3 {
+  @apply text-[24px] font-semibold font-PlusJakartaSans leading-[120%] tracking-[-4%];
+}
+
+.header4 {
+  @apply text-[20px] font-medium font-PlusJakartaSans leading-[120%] tracking-[-4%];
+}
+
+.paragraph1-bold {
+  @apply text-[20px] font-bold font-PlusJakartaSans leading-[150%] tracking-[-2%];
+}
+
+.paragraph1 {
+  @apply text-[20px] font-medium font-PlusJakartaSans leading-[150%] tracking-[-2%];
+}
+
+.paragraph2 {
+  @apply text-[20px] font-medium font-PlusJakartaSans leading-[120%] tracking-[-2%];
+}
+
+.paragraph3 {
+  @apply text-[16px] font-medium font-PlusJakartaSans leading-[120%] tracking-[-2%];
+}
+
+.paragraph4 {
+  @apply text-[14px] font-semibold font-PlusJakartaSans leading-[120%] tracking-[-2%];
+}
 
 body {
-  @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  @apply m-0 text-paragraph-color1;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

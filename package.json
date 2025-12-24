@@ -9,6 +9,9 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "@fontsource/gasoek-one": "^5.2.7",
+    "@fontsource/xanh-mono": "^5.2.8",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-devtools": "^0.7.0",
     "@tanstack/react-form": "^1.0.0",

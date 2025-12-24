@@ -1,118 +1,167 @@
-import { createFileRoute } from '@tanstack/react-router'
-import {
-  Zap,
-  Server,
-  Route as RouteIcon,
-  Shield,
-  Waves,
-  Sparkles,
-} from 'lucide-react'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({ component: App })
 
 function App() {
-  const features = [
-    {
-      icon: <Zap className="w-12 h-12 text-cyan-400" />,
-      title: 'Powerful Server Functions',
-      description:
-        'Write server-side code that seamlessly integrates with your client components. Type-safe, secure, and simple.',
-    },
-    {
-      icon: <Server className="w-12 h-12 text-cyan-400" />,
-      title: 'Flexible Server Side Rendering',
-      description:
-        'Full-document SSR, streaming, and progressive enhancement out of the box. Control exactly what renders where.',
-    },
-    {
-      icon: <RouteIcon className="w-12 h-12 text-cyan-400" />,
-      title: 'API Routes',
-      description:
-        'Build type-safe API endpoints alongside your application. No separate backend needed.',
-    },
-    {
-      icon: <Shield className="w-12 h-12 text-cyan-400" />,
-      title: 'Strongly Typed Everything',
-      description:
-        'End-to-end type safety from server to client. Catch errors before they reach production.',
-    },
-    {
-      icon: <Waves className="w-12 h-12 text-cyan-400" />,
-      title: 'Full Streaming Support',
-      description:
-        'Stream data from server to client progressively. Perfect for AI applications and real-time updates.',
-    },
-    {
-      icon: <Sparkles className="w-12 h-12 text-cyan-400" />,
-      title: 'Next Generation Ready',
-      description:
-        'Built from the ground up for modern web applications. Deploy anywhere JavaScript runs.',
-    },
-  ]
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      <section className="relative py-20 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
-        <div className="relative max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <img
-              src="/tanstack-circle-logo.png"
-              alt="TanStack Logo"
-              className="w-24 h-24 md:w-32 md:h-32"
-            />
-            <h1 className="text-6xl md:text-7xl font-black text-white [letter-spacing:-0.08em]">
-              <span className="text-gray-300">TANSTACK</span>{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                START
-              </span>
-            </h1>
-          </div>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
-            The framework for next generation AI applications
-          </p>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-            Full-stack framework powered by TanStack Router for React and Solid.
-            Build modern applications with server functions, streaming, and type
-            safety.
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <a
-              href="https://tanstack.com/start"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-cyan-500/50"
-            >
-              Documentation
-            </a>
-            <p className="text-gray-400 text-sm mt-2">
-              Begin your TanStack Start journey by editing{' '}
-              <code className="px-2 py-1 bg-slate-700 rounded text-cyan-400">
-                /src/routes/index.tsx
-              </code>
-            </p>
+    <>
+      <section className='bg-[url(/home-hero-bg.jpg)] bg-fixed bg-bottom-left bg-no-repeat bg-cover min-h-screen flex flex-col items-center justify-between'>
+        {/* needed to add an empty div here to make the layout work properly */}
+        <div></div>
+        <div className='w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col text-center'>
+          <img
+            className='rounded-3xl h-[268px] w-full object-cover'
+            src='/home-hero-card.jpg'
+            alt='Wild Camping Along Tasmania’s East Coast'
+          />
+          <div className='flex flex-col h-full justify-center gap-3 p-3.5'>
+            <p className='text-paragraph-color4 paragraph3'>Featured article</p>
+            <h3 className='header3 text-headline-color1'>
+              Wild Camping Along <br /> Tasmania’s East Coast
+            </h3>
           </div>
         </div>
+        <div className='m-5 flex flex-col items-center gap-3 text-paragraph-color1 paragraph4'>
+          <p>Scroll for more</p>
+          <img src='/Arrow.svg' alt='Arrow Down' />
+        </div>
       </section>
-
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {feature.title}
+      <section className='min-h-screen flex flex-col items-center justify-between gap-10 px-5 py-20'>
+        <h2 className='text-center header2'>Latest travel stories</h2>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
+          <div className='md:w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col text-center'>
+            <img
+              className='rounded-3xl min-h-[268px] w-full object-cover'
+              src='/001.jpg'
+              alt='Wild Camping Along Tasmania’s East Coast'
+            />
+            <div className='flex flex-col h-full justify-center gap-3 p-3.5'>
+              <p className='text-paragraph-color4 paragraph3'>
+                October 10, 2025
+              </p>
+              <h3 className='header3 text-headline-color1'>
+                Finding Stillness in the Hills of San Cristóbal
               </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {feature.description}
+            </div>
+          </div>
+          <div className='md:w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col text-center'>
+            <img
+              className='rounded-3xl min-h-[268px] w-full object-cover'
+              src='/002.jpg'
+              alt='Wild Camping Along Tasmania’s East Coast'
+            />
+            <div className='flex flex-col h-full justify-center gap-3 p-3.5'>
+              <p className='text-paragraph-color4 paragraph3'>
+                October 2, 2025
+              </p>
+              <h3 className='header3 text-headline-color1'>
+                Wandering Through the Streets of Rome
+              </h3>
+            </div>
+          </div>
+          <div className='md:w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col text-center'>
+            <img
+              className='rounded-3xl min-h-[268px] w-full object-cover'
+              src='/003.jpg'
+              alt='Wild Camping Along Tasmania’s East Coast'
+            />
+            <div className='flex flex-col h-full justify-center gap-3 p-3.5'>
+              <p className='text-paragraph-color4 paragraph3'>
+                September 17, 2025
+              </p>
+              <h3 className='header3 text-headline-color1'>
+                Driving Across Monument Valley
+              </h3>
+            </div>
+          </div>
+          <div className='md:w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col text-center'>
+            <img
+              className='rounded-3xl min-h-[268px] w-full object-cover'
+              src='/004.jpg'
+              alt='Wild Camping Along Tasmania’s East Coast'
+            />
+            <div className='flex flex-col h-full justify-center gap-3 p-3.5'>
+              <p className='text-paragraph-color4 paragraph3'>
+                September 2, 2025
+              </p>
+              <h3 className='header3 text-headline-color1'>
+                Walking the Terraces of Northern Vietnam
+              </h3>
+            </div>
+          </div>
+        </div>
+        <Link className='text-textlink' to='/articles'>
+          View all articles
+        </Link>
+      </section>
+      <section className='bg-background-color4 text-headline-color3 py-20 px-5 flex flex-col items-center gap-10'>
+        <h2 className='text-center header2'>Upcoming itinerary</h2>
+        <div className='w-full last:border-b last:border-dashed'>
+          <div className='flex justify-between border-t border-dashed gap-5 py-[14.5px] w-full'>
+            <h1 className='flex flex-col justify-center text-display w-[144px]'>
+              01
+            </h1>
+            <div className='flex-1 flex flex-col justify-center'>
+              <h3 className='header3'>Oaxaca, Mexico</h3>
+              <p>
+                March 12 - March 25 <br />
+                For mole, markets, and Monte Albán
               </p>
             </div>
-          ))}
+            <img className='w-[230px] max-sm:hidden' src='/0001.jpg' alt='' />
+          </div>
+          <div className='flex justify-between border-t border-dashed gap-5 py-[14.5px] w-full'>
+            <h1 className='flex flex-col justify-center text-display w-[144px]'>
+              02
+            </h1>
+            <div className='flex-1 flex flex-col justify-center'>
+              <h3 className='header3'>Rome, Italy</h3>
+              <p>
+                June 9 - June 30
+                <br />
+                Evening walks and neighborhood trattorias
+              </p>
+            </div>
+            <img
+              className='w-[230px] rounded-full max-sm:hidden'
+              src='/0002.jpg'
+              alt=''
+            />
+          </div>
+          <div className='flex justify-between border-t border-dashed gap-5 py-[14.5px] w-full'>
+            <h1 className='flex flex-col justify-center text-display w-[144px]'>
+              03
+            </h1>
+            <div className='flex-1 flex flex-col justify-center'>
+              <h3 className='header3'>Lofoten, Norway</h3>
+              <p>
+                October 20 - October 28
+                <br />
+                Admire Sakurajima from the ferry
+              </p>
+            </div>
+            <img className='w-[230px] max-sm:hidden' src='/0003.jpg' alt='' />
+          </div>
+          <div className='flex justify-between border-t border-dashed gap-5 py-[14.5px] w-full'>
+            <h1 className='flex flex-col justify-center text-display w-[144px]'>
+              04
+            </h1>
+            <div className='flex-1 flex flex-col justify-center'>
+              <h3 className='header3'>Kagoshima, Japan</h3>
+              <p>
+                Dec 3 - Dec 21
+                <br />
+                Admire Sakurajima from the ferry
+              </p>
+            </div>
+            <img
+              className='w-[230px] rounded-full max-sm:hidden'
+              src='/0004.jpg'
+              alt=''
+            />
+          </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }
