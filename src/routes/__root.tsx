@@ -14,6 +14,10 @@ import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
 
+import { motion } from 'motion/react'
+
+import { ReactLenis } from 'lenis/react'
+
 interface MyRouterContext {
   queryClient: QueryClient
 }
@@ -41,17 +45,27 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   }),
 
   shellComponent: RootDocument,
+  notFoundComponent: () => {
+    return <p>Not found!</p>
+  },
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
+      <ReactLenis root />
       <head>
         <HeadContent />
       </head>
-      <body>
-        <Header />
-        {children}
+      <motion.body>
+        <section className='xl:fixed xl:left-0 xl:w-1/3 h-full bg-background-color3 flex flex-col max-xl:gap-[135px] text-center py-5'>
+          <Header />
+        </section>
+        <section className='min-h-screen xl:w-2/3 max-xl:w-full justify-self-end'>
+          {/* Main content area */}
+          {children}
+        </section>
+
         <TanStackDevtools
           config={{
             position: 'bottom-right',
@@ -65,7 +79,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           ]}
         />
         <Scripts />
-      </body>
+      </motion.body>
     </html>
   )
 }
