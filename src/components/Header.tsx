@@ -57,24 +57,34 @@ export default function Header() {
           </p>
         </motion.div>
       </div>
-      <motion.div
-        initial={{ opacity: 0, translateX: -100 }}
-        animate={{ opacity: 1, translateX: +100 }}
-        transition={{
-          duration: 1,
-          ease: 'easeOut',
-          delay: 0.2,
-          repeat: Infinity,
-          repeatType: 'loop',
-        }}
-        className='w-full mask-r-from-70% mask-l-from-70%'
-      >
-        <div className='flex gap-4 w-full items-center text-headline-color2 header4'>
-          <Suspense fallback={<div>Loading location...</div>}>
+      <div className='w-full mask-r-from-70% mask-l-from-70%'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, repeatCount: Infinity }}
+          transition={{
+            duration: 1,
+            ease: 'easeOut',
+            delay: 0.2,
+          }}
+          className='flex justify-around gap-4 w-full items-center text-headline-color2 header4 transition-all duration-300'
+        >
+          <Suspense
+            fallback={
+              <>
+                <div>
+                  <img src={'/Globe icon.svg?url'} alt='Globe' />
+                </div>
+                <div>Finding Current location...</div>
+                <div>
+                  <img src={'/Globe icon.svg?url'} alt='Globe' />
+                </div>
+              </>
+            }
+          >
             <LocationContent />
           </Suspense>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </>
   )
 }

@@ -5,6 +5,9 @@ export const fetchLocation = createServerFn({ method: 'GET' }).handler(
   async () => {
     console.info('Fetching location...')
 
+    // Add a 2000ms delay
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
     return {
       location: 'Dallol, Ethiopia',
       coordinates: '14.2417° N',

@@ -45,6 +45,9 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   }),
 
   shellComponent: RootDocument,
+  notFoundComponent: () => {
+    return <p>Not found!</p>
+  },
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -54,7 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <motion.body layout>
+      <motion.body>
         <section className='xl:fixed xl:left-0 xl:w-1/3 h-full bg-background-color3 flex flex-col max-xl:gap-[135px] text-center py-5'>
           <Header />
         </section>
