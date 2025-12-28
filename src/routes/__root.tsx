@@ -116,6 +116,7 @@ function FooterNav() {
       {navIcons.map((icon) => (
         <Link
           to={icon.to}
+          key={icon.Icon}
           className='navlink text-paragraph-color4 hover:text-headline-color2 transition-all duration-500'
           activeProps={{
             style: { color: 'var(--paragraph-color1)' },
