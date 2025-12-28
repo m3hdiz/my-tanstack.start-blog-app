@@ -25,16 +25,16 @@
   --font-Roboto: 'Roboto', sans-serif;
 }
 
-.text-display {
+.display {
   @apply text-[104px] font-XanhMono leading-[120px] tracking-[-3%];
 }
 
-.text-caption,
-.text-navlink {
-  @apply text-[14px] font-semibold leading-[120%] tracking-[-2%];
+.caption,
+.navlink {
+  @apply text-[16px] font-semibold leading-[120%] tracking-[-2%];
 }
 
-.text-textlink {
+.textlink {
   @apply text-[16px] underline font-medium leading-[120%] tracking-[-2%];
 }
 

@@ -10,7 +10,6 @@ import FeaturedArticleCard from '@/components/FearuredCard'
 
 export const Route = createFileRoute('/')({
   loader: async () => {
-    // These run in parallel on the server (if SSR) or client
     const [featured, latest, upcoming] = await Promise.all([
       getFeaturedArticle(),
       getLatestArticles(),
@@ -64,14 +63,14 @@ function App() {
             <LatestArticlesGrid articles={latest} />
           </div>
           <Link
-            className='text-textlink hover:text-paragraph-color4'
+            className='textlink hover:text-paragraph-color4 transition duration-500'
             to='/articles'
           >
             View all articles
           </Link>
         </section>
 
-        <section className='bg-background-color4 text-headline-color3 py-20 px-5 flex flex-col items-center gap-10'>
+        <section className='bg-background-color4 text-headline-color3 py-20 px-5 flex flex-col items-center gap-10 pb-70'>
           <h2 className='text-center header2'>Upcoming itinerary</h2>
           <div className='w-full last:border-b last:border-dashed'>
             {upcoming.map((item) => (
@@ -79,7 +78,7 @@ function App() {
                 key={item.number}
                 className='flex justify-between border-t border-dashed gap-5 py-[14.5px] w-full'
               >
-                <h1 className='flex flex-col justify-center text-display w-[144px]'>
+                <h1 className='flex flex-col justify-center display w-[144px]'>
                   {item.number}
                 </h1>
                 <div className='flex-1 flex flex-col justify-center'>

@@ -33,8 +33,6 @@ const FeaturedArticleCard: React.FC<FeaturedArticleCardProps> = ({
         height={268}
         layout='constrained'
         className='rounded-3xl h-[268px] w-full object-cover'
-        priority={true}
-        background='auto'
       />
 
       <div className='flex flex-col h-full justify-center gap-3 p-3.5'>

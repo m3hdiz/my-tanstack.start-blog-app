@@ -48,7 +48,7 @@ export default function Header() {
           transition={{ duration: 1, ease: 'easeOut' }}
           className='header1 text-headline-color2'
         >
-          The Roam Report
+          The Roam <br /> Report
         </motion.h1>
 
         <motion.div

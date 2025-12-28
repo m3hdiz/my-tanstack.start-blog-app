@@ -27,7 +27,7 @@ const LatestArticlesCard: React.FC<LatestArticlesCardProps> = ({
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
             key={index}
-            className={`md:w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col text-center hover:cursor-pointer ${className}`}
+            className={`md:w-[370px] h-[460px] p-2.5 bg-background-color1 flex flex-col justify-center items-center text-center hover:cursor-pointer ${className}`}
           >
             <OptimisedImg
               src={article.image}
@@ -35,9 +35,7 @@ const LatestArticlesCard: React.FC<LatestArticlesCardProps> = ({
               width={370}
               height={268}
               layout='constrained'
-              className='rounded-3xl h-[268px] w-full object-cover'
-              priority={true}
-              background='auto'
+              className='rounded-3xl min-h-[268px] object-cover'
             />
             <div className='flex flex-col h-full justify-center gap-3 p-3.5'>
               <p className='text-paragraph-color4 paragraph3'>{article.date}</p>

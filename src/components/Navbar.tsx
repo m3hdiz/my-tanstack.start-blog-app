@@ -25,7 +25,7 @@ export default function Navbar() {
             >
               <Link
                 to={item.to}
-                className='text-navlink text-paragraph-color4 hover:text-headline-color2 transition-all duration-500'
+                className='navlink text-paragraph-color4 hover:text-headline-color2 transition-all duration-500'
                 activeProps={{
                   style: { color: 'var(--paragraph-color1)' },
                 }}
