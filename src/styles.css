@@ -23,23 +23,6 @@
   --font-PlusJakartaSans: 'Plus Jakarta Sans', sans-serif;
   --font-XanhMono: 'Xanh Mono', monospace;
   --font-Roboto: 'Roboto', sans-serif;
-
-  /* css variables for typography: */
-  /* --text-display-font-size: 104px;
-  --text-display-line-height: 120px;
-  --text-caption-font-size: 14px;
-  --text-caption-line-height: 120px;
-  --text-navlink-font-size: 14px;
-  --text-navlink-line-height: 120px;
-  --text-textlink-font-size: 16px;
-  --text-textlink-line-height: 120px;
-  --text-header1-font-size: 80px;
-  --text-header2-font-size: 48px;
-  --text-header3-font-size: 24px;
-  --text-header4-font-size: 20px;
-  --text-paragraph1-font-size: 20px;
-  --text-paragraph2-font-size: 20px;
-  --text-paragraph3-font-size: 16px; */
 }
 
 .text-display {
@@ -103,4 +86,18 @@ body {
 code {
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  .screenCard {
+    width: 400px;
+    height: 500px;
+  }
 }

@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <>
       <motion.div
-        className='w-full flex justify-center'
+        className='w-full flex justify-center max-xl:fixed max-xl:top-5 max-xl:z-50'
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
@@ -20,13 +20,12 @@ export default function Navbar() {
           {navItems.map((item) => (
             <motion.div
               key={item.to}
-              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className='cursor-pointer'
             >
               <Link
                 to={item.to}
-                className='navlink text-paragraph-color4'
+                className='text-navlink text-paragraph-color4 hover:text-headline-color2 transition-all duration-500'
                 activeProps={{
                   style: { color: 'var(--paragraph-color1)' },
                 }}
